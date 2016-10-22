@@ -1,6 +1,10 @@
 /*	
 	Author: Szymon Kocur
 	e-mail: skocur10@gmail.com
+	LinkedIn: https://pl.linkedin.com/in/szymon-kocur
+	
+	Project:
+	GitHub: https://github.com/SKocur/3D-Vertex-Engine
 */
 
 #include "Main.h"
