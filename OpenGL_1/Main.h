@@ -1,7 +1,7 @@
 #pragma once
 
 #include "GUI.h"
-#include "cube_1.h"
+#include "Generator.h"
 #include "Logs.h"
 
 #include <GL/glut.h>
@@ -43,7 +43,7 @@ GLdouble centerz = -100;
 void Display()
 {
 	GUI gui;
-	cube_1 cube1;
+	Generator cube;
 	// Background color
 	glClearColor(1.0, 1.0, 1.0, 1.0);
 
@@ -59,10 +59,17 @@ void Display()
 	// Position of player
 	gluLookAt(eyex, eyey, eyez, centerx, centery, centerz, 0, 1, 0);
 
-	cube1.render();
-	glutWireCube(1);
-	glTranslatef(1.0, -1.0, 0.0);
-	glutWireCube(1);
+	// Simple presentation of function generating some 3D objects
+	double x = 5.0;
+	double y = 4.0;
+	double z = 3.0;
+
+	cube.renderWall(x, y, z);
+	cube.render();
+	glTranslatef(-5.0, 0.0, 0.0);
+	cube.renderLStairs(x, y, z);
+	glTranslatef(x, -1, -z);
+	cube.renderRStairs(x, y, z);
 
 	// Commands to execute
 	glFlush();
