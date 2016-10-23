@@ -73,7 +73,7 @@ void Generator::render() {
 // Generate linear wall
 void Generator::renderLinearWall(int lengthX) {
 	//Black color
-	glColor3f(0.0, 0.0, 0.0);
+	glColor3f(1.0, 0.9, 0.0);
 	
 	for (int a = 0; a < lengthX; a++) {
 		glutWireCube(1);
@@ -112,10 +112,10 @@ void Generator::renderLStairs(int lengthX, int widthZ, int steps) {
 }
 
 // Generate a stairs (to the right) with given parameters
-void Generator::renderRStairs(int lengthX, int widthZ, int heightY) {
+void Generator::renderRStairs(int lengthX, int widthZ, int steps) {
 	Generator plane;
 
-	for (int a = 0; a < heightY; a++) {
+	for (int a = 0; a < steps; a++) {
 		plane.renderPlane(lengthX, widthZ);
 		glTranslatef(lengthX, 1.0, widthZ);
 	}

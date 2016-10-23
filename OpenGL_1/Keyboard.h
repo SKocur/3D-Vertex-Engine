@@ -3,34 +3,44 @@
 #include "Main.h"
 #include <GL\glew.h>
 
-//TODO: Repair upside down movement
 void Keyboard(unsigned char key, int x, int y)
 {
 	Logs cords;
 
 	if (key == 'w') {
 		eyez -= 0.1;
-		cords.writeCords(eyex, eyey, eyez);
+		centerz -= 0.1;
+		cords.writeCords(eyex, eyey, eyez, centerx, centery, centerz);
 	}
 	if (key == 's') {
 		eyez += 0.1;
-		cords.writeCords(eyex, eyey, eyez);
+		cords.writeCords(eyex, eyey, eyez, centerx, centery, centerz);
 	}
 	if (key == 'a') {
 		eyex -= 0.1;
-		cords.writeCords(eyex, eyey, eyez);
+		centerx -= 0.1;
+		cords.writeCords(eyex, eyey, eyez, centerx, centery, centerz);
 	}
 	if (key == 'd') {
 		eyex += 0.1;
-		cords.writeCords(eyex, eyey, eyez);
+		centerx += 0.1;
+		cords.writeCords(eyex, eyey, eyez, centerx, centery, centerz);
+	}
+	if (key == 'q') {
+		rotatey -= 1;
+	}
+	if (key == 'e') {
+		rotatey += 1;
 	}
 	if (key == '+') {
 		eyey += 0.1;
-		cords.writeCords(eyex, eyey, eyez);
+		centery += 0.1;
+		cords.writeCords(eyex, eyey, eyez, centerx, centery, centerz);
 	}
 	if (key == '-') {
 		eyey -= 0.1;
-		cords.writeCords(eyex, eyey, eyez);
+		centery -= 0.1;
+		cords.writeCords(eyex, eyey, eyez, centerx, centery, centerz);
 	}
 
 	// Display new frame
@@ -39,26 +49,35 @@ void Keyboard(unsigned char key, int x, int y)
 
 void SpecialKeys(int key, int x, int y)
 {
+	Logs cords;
 	switch (key)
 	{
 		// Left arrow
 	case GLUT_KEY_LEFT:
-		centerx -= 0.8;
+		if (upx > -1) {
+			upx -= 0.01;
+			cords.writeCords(eyex, eyey, eyez, centerx, centery, centerz);
+		}
 		break;
 
 		// Up arrow
 	case GLUT_KEY_UP:
-		centerz -= 0.8;
+		rotatex -= 1;
+		cords.writeCords(eyex, eyey, eyez, centerx, centery, centerz);
 		break;
 
 		// Right arrow
 	case GLUT_KEY_RIGHT:
-		centerx += 0.8;
+		if (upx < 1) {
+			upx += 0.01;
+			cords.writeCords(eyex, eyey, eyez, centerx, centery, centerz);
+		}
 		break;
 
 		// Bottom arrow
 	case GLUT_KEY_DOWN:
-		centerz += 0.8;
+		rotatex += 1;
+		cords.writeCords(eyex, eyey, eyez, centerx, centery, centerz);
 		break;
 	}
 

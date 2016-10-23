@@ -40,7 +40,7 @@ int main(int argc, char * argv[])
 	glutCreateMenu(Menu);
 
 	//Display coordinate of default camera's position
-	cords.writeCords(eyex, eyey, eyez);
+	cords.writeCords(eyex, eyey, eyez, centerx, centery, centerz);
 
 	// Add options to pop-up menu
 	// It uses polish language when WIN32 is defined

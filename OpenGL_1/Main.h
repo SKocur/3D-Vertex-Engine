@@ -39,13 +39,21 @@ GLdouble centerx = 0;
 GLdouble centery = 0;
 GLdouble centerz = -100;
 
+// Coordinates of up vector
+GLdouble upx = 0;
+GLdouble upy = 1;
+GLdouble upz = 0;
+
+GLdouble rotatex = 0.0;
+GLdouble rotatey = 0.0;
+
 // Function which generates 3D scene
 void Display()
 {
 	GUI gui;
 	Generator cube;
 	// Background color
-	glClearColor(1.0, 1.0, 1.0, 1.0);
+	glClearColor(0.0, 0.0, 0.0, 1.0);
 
 	// Clear
 	glClear(GL_COLOR_BUFFER_BIT);
@@ -57,7 +65,10 @@ void Display()
 	glLoadIdentity();
 
 	// Position of player
-	gluLookAt(eyex, eyey, eyez, centerx, centery, centerz, 0, 1, 0);
+	gluLookAt(eyex, eyey, eyez, centerx, centery, centerz, upx, upy, upz);
+
+	glRotatef(rotatex, 1.0, 0, 0);
+	glRotatef(rotatey, 0, 1.0, 0);
 
 	// Simple presentation of function generating some 3D objects
 	double x = 5.0;
@@ -91,13 +102,13 @@ void Reshape(int width, int height)
 	if (Aspect == ASPECT_1_1)
 	{
 		if (width < height && width > 0)
-			glFrustum(-2.0, 2.0, -2.0 * height / width, 2.0 * height / width, 1.0, 5.0);
+			glFrustum(-2.0, 2.0, -2.0 * height / width, 2.0 * height / width, 1.0, 500.0);
 		else
 			if (width >= height && height > 0)
-				glFrustum(-2.0 * width / height, 2.0 * width / height, -2.0, 2.0, 1.0, 5.0);
+				glFrustum(-2.0 * width / height, 2.0 * width / height, -2.0, 2.0, 1, 500.0);
 	}
 	else
-		glFrustum(-2.0, 2.0, -2.0, 2.0, 1.0, 5.0);
+		glFrustum(-2.0, 2.0, -2.0, 2.0, 1.0, 500.0);
 
 	// Dispay 3D scene
 	Display();
