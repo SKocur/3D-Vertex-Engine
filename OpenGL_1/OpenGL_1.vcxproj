@@ -157,6 +157,7 @@
     <ClInclude Include="Logs.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="Scene.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="OpenGL_1.rc" />

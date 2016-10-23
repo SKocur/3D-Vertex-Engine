@@ -14,6 +14,7 @@ void Keyboard(unsigned char key, int x, int y)
 	}
 	if (key == 's') {
 		eyez += 0.1;
+		centerz += 0.1;
 		cords.writeCords(eyex, eyey, eyez, centerx, centery, centerz);
 	}
 	if (key == 'a') {
@@ -28,9 +29,13 @@ void Keyboard(unsigned char key, int x, int y)
 	}
 	if (key == 'q') {
 		rotatey -= 1;
+		eyez -= 0.01;
+		centerz += 0.01;
 	}
 	if (key == 'e') {
 		rotatey += 1;
+		eyez += 0.01;
+		centerz -= 0.01;
 	}
 	if (key == '+') {
 		eyey += 0.1;
