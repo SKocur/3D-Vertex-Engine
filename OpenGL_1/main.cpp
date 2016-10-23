@@ -45,17 +45,11 @@ int main(int argc, char * argv[])
 	// Add options to pop-up menu
 	// It uses polish language when WIN32 is defined
 	// if not, default is english
-#ifdef WIN32
 
-	glutAddMenuEntry("Aspekt obrazu - ca³e okno", FULL_WINDOW);
-	glutAddMenuEntry("Aspekt obrazu 1:1", ASPECT_1_1);
-	glutAddMenuEntry("Wyjœcie", EXIT);
-#else
 
 	glutAddMenuEntry("Aspect ratio - full window", FULL_WINDOW);
 	glutAddMenuEntry("Aspect ratio 1:1", ASPECT_1_1);
 	glutAddMenuEntry("Exit", EXIT);
-#endif
 
 	// Show pop-up menu when right mouse button is clicked
 	glutAttachMenu(GLUT_RIGHT_BUTTON);
