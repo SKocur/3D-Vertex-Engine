@@ -1,5 +1,5 @@
-#include "Generator.h"
-#include "Logs.h"
+#include "../include/Generator.h"
+#include "../include/Logs.h"
 
 #include <GL/glut.h>
 

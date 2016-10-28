@@ -19,12 +19,15 @@ GLdouble upz = 0;
 GLdouble rotatex = 0.0;
 GLdouble rotatey = 0.0;
 
+double color_R = 0.0;
+double color_G = 0.0;
+double color_B = 0.0;
+
 void Display()
 {
-	GUI gui;
 	Generator cube;
 
-	glClearColor(0.0, 0.0, 0.0, 1.0);
+	glClearColor(color_R, color_G, color_B, 1.0);
 	glClear(GL_COLOR_BUFFER_BIT);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();

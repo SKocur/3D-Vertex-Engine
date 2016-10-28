@@ -1,9 +1,9 @@
 #pragma once
 
-#include "GUI.h"
-#include "Generator.h"
-#include "Logs.h"
-#include "Scene.h"
+#include "../include/Generator.h"
+#include "../include/Logs.h"
+#include "../include/Scene.h"
+#include "../include/MenuColors.h"
 
 #include <GL/glut.h>
 #include <stdlib.h>
@@ -11,8 +11,9 @@
 
 enum
 {
-	FULL_WINDOW, 
+	FULL_WINDOW,
 	ASPECT_1_1,
+	MENU_COLOR,
 	EXIT
 };
 

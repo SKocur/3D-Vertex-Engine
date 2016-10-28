@@ -23,6 +23,7 @@
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>OpenGL_1</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <ProjectName>3DVertexEngine</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -145,22 +146,22 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Generator.cpp" />
-    <ClCompile Include="GUI.cpp" />
-    <ClCompile Include="Logs.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="../src/Generator.cpp" />
+    <ClCompile Include="../src/Logs.cpp" />
+    <ClCompile Include="../src/main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Generator.h" />
-    <ClInclude Include="GUI.h" />
-    <ClInclude Include="Keyboard.h" />
-    <ClInclude Include="Logs.h" />
-    <ClInclude Include="Main.h" />
-    <ClInclude Include="resource.h" />
-    <ClInclude Include="Scene.h" />
+    <ClInclude Include="../include/Generator.h" />
+    <ClInclude Include="../include/Keyboard.h" />
+    <ClInclude Include="../include/Logs.h" />
+    <ClInclude Include="../include/Main.h" />
+    <ClInclude Include="../include/Mouse.h" />
+    <ClInclude Include="../include/resource.h" />
+    <ClInclude Include="../include/Scene.h" />
+	<ClInclude Include="../include/MenuColors.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="OpenGL_1.rc" />
+    <ResourceCompile Include="3DVertexEngine.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,4 +1,4 @@
-#include "Logs.h"
+#include "../include/Logs.h"
 
 #include <GL/glew.h>
 #include <iostream>
