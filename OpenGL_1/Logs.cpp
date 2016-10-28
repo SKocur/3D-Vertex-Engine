@@ -12,7 +12,6 @@ Logs::~Logs()
 {
 }
 
-// It writes coordinates of camera to the console
 void Logs::writeCords(double eyex, double eyey, double eyez, double centerx, double centery, double centerz) {
 	std::cout << "x: " << eyex;
 	std::cout << " cenx: " << centerx;
@@ -22,8 +21,6 @@ void Logs::writeCords(double eyex, double eyey, double eyez, double centerx, dou
 	std::cout << " cenz: "<< centerz << std::endl;
 }
 
-// OPTIONAL
-// Can be used to write a name of class during initialization
 void Logs::initClasses(char* name) {
 	std::cout << "run " << name << std::endl;
 }

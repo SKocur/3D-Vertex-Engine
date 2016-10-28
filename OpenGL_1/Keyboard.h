@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Main.h"
-#include <GL\glew.h>
+#include <GL\glut.h>
 
 void Keyboard(unsigned char key, int x, int y)
 {
@@ -57,7 +57,6 @@ void SpecialKeys(int key, int x, int y)
 	Logs cords;
 	switch (key)
 	{
-		// Left arrow
 	case GLUT_KEY_LEFT:
 		if (upx > -1) {
 			upx -= 0.01;
@@ -65,13 +64,11 @@ void SpecialKeys(int key, int x, int y)
 		}
 		break;
 
-		// Up arrow
 	case GLUT_KEY_UP:
 		rotatex -= 1;
 		cords.writeCords(eyex, eyey, eyez, centerx, centery, centerz);
 		break;
 
-		// Right arrow
 	case GLUT_KEY_RIGHT:
 		if (upx < 1) {
 			upx += 0.01;
@@ -79,13 +76,11 @@ void SpecialKeys(int key, int x, int y)
 		}
 		break;
 
-		// Bottom arrow
 	case GLUT_KEY_DOWN:
 		rotatex += 1;
 		cords.writeCords(eyex, eyey, eyez, centerx, centery, centerz);
 		break;
 	}
 
-	// Display new frame
 	Reshape(glutGet(GLUT_WINDOW_WIDTH), glutGet(GLUT_WINDOW_HEIGHT));
 }
