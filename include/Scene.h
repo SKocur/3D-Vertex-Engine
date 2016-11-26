@@ -26,6 +26,7 @@ double color_B = 0.0;
 void Display()
 {
 	Generator cube;
+	Generator objectFile;
 
 	glClearColor(color_R, color_G, color_B, 1.0);
 	glClear(GL_COLOR_BUFFER_BIT);
@@ -39,13 +40,14 @@ void Display()
 	double y = 4.0;
 	double z = 3.0;
 
-	cube.renderWall(x, y, z);
+	/*cube.renderWall(x, y, z);
 	cube.render();
 	glTranslatef(-5.0, 0.0, 0.0);
 	cube.renderLStairs(x, y, z);
 	glTranslatef(x, -1, -z);
 	cube.renderRStairs(x, y, z);
-	glTranslatef(5, 5, 5);
+	glTranslatef(5, 5, 5); */
+	objectFile.getObjFromFile("../objects/walltest.3DV");
 
 	glFlush();
 	glutSwapBuffers();

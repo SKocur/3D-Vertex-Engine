@@ -13,5 +13,6 @@ public:
 	void renderLinearWall(int lengthX);
 	void renderLStairs(int lengthX, int widthZ, int steps);
 	void renderRStairs(int lengthX, int widthZ, int steps);
+	void getObjFromFile(char * path);
 };
 

@@ -2,6 +2,8 @@
 #include "../include/Logs.h"
 
 #include <GL/glut.h>
+#include <iostream>
+#include <fstream>
 
 Generator::Generator()
 {
@@ -81,7 +83,7 @@ void Generator::renderPlane(int lengthX, int widthZ) {
 }
 
 void Generator::renderLinearWall(int lengthX) {
-	glColor3f(1.0, 0.9, 0.0);
+	glColor3f(0.0, 1.0, 0.0);
 	
 	for (int a = 0; a < lengthX; a++) {
 		glutWireCube(1);
@@ -105,4 +107,18 @@ void Generator::renderRStairs(int lengthX, int widthZ, int steps) {
 		plane.renderPlane(lengthX, widthZ);
 		glTranslatef(lengthX, 1.0, widthZ);
 	}
+}
+
+using namespace std;
+void Generator::getObjFromFile(char * path) {
+	fstream object(path, ios::in);
+	int length, height, width;
+
+	object >> length >> height >> width;
+	cout << length << height << width;
+
+	Generator wall;
+	wall.renderWall(length, width, height);
+
+	object.close();
 }

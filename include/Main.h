@@ -13,7 +13,6 @@ enum
 {
 	FULL_WINDOW,
 	ASPECT_1_1,
-	MENU_COLOR,
 	EXIT
 };
 
