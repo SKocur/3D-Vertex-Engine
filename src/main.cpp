@@ -14,7 +14,6 @@
 
 int main(int argc, char * argv[])
 {
-	Logs cords;
 	int mainMenu, colorsMenu;
 
 	glutInit(&argc, argv);
@@ -27,7 +26,6 @@ int main(int argc, char * argv[])
 	glutSpecialFunc(SpecialKeys);
 	glutMouseFunc(mouseButton);
 
-	cords.writeCords(eyex, eyey, eyez, centerx, centery, centerz);
 	colorsMenu = glutCreateMenu(MenuColor);
 	glutAddMenuEntry("Black", BLACK);
 	glutAddMenuEntry("White", WHITE);

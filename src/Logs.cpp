@@ -7,18 +7,14 @@ Logs::Logs()
 {
 }
 
-
 Logs::~Logs()
 {
 }
 
-void Logs::writeCords(double eyex, double eyey, double eyez, double centerx, double centery, double centerz) {
-	std::cout << "x: " << eyex;
-	std::cout << " cenx: " << centerx;
-	std::cout << " y: " << eyey;
-	std::cout << " ceny: " << centery;
-	std::cout << " z: " << eyez;
-	std::cout << " cenz: "<< centerz << std::endl;
+void Logs::writeCords(double &eyex, double &eyey, double &eyez) {
+	printf("x: %-10.1f", eyex);
+	printf("y: %-10.1f", eyey);
+	printf("z: %-10.1f \n", eyez);
 }
 
 void Logs::initClasses(char* name) {

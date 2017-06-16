@@ -10,22 +10,22 @@ void Keyboard(unsigned char key, int x, int y)
 	if (key == 'w') {
 		eyez -= 0.1;
 		centerz -= 0.1;
-		cords.writeCords(eyex, eyey, eyez, centerx, centery, centerz);
+		cords.writeCords(eyex, eyey, eyez);
 	}
 	if (key == 's') {
 		eyez += 0.1;
 		centerz += 0.1;
-		cords.writeCords(eyex, eyey, eyez, centerx, centery, centerz);
+		cords.writeCords(eyex, eyey, eyez);
 	}
 	if (key == 'a') {
 		eyex -= 0.1;
 		centerx -= 0.1;
-		cords.writeCords(eyex, eyey, eyez, centerx, centery, centerz);
+		cords.writeCords(eyex, eyey, eyez);
 	}
 	if (key == 'd') {
 		eyex += 0.1;
 		centerx += 0.1;
-		cords.writeCords(eyex, eyey, eyez, centerx, centery, centerz);
+		cords.writeCords(eyex, eyey, eyez);
 	}
 	if (key == 'q') {
 		rotatey -= 1;
@@ -40,12 +40,12 @@ void Keyboard(unsigned char key, int x, int y)
 	if (key == '+') {
 		eyey += 0.1;
 		centery += 0.1;
-		cords.writeCords(eyex, eyey, eyez, centerx, centery, centerz);
+		cords.writeCords(eyex, eyey, eyez);
 	}
 	if (key == '-') {
 		eyey -= 0.1;
 		centery -= 0.1;
-		cords.writeCords(eyex, eyey, eyez, centerx, centery, centerz);
+		cords.writeCords(eyex, eyey, eyez);
 	}
 
 	// Display new frame
@@ -60,25 +60,21 @@ void SpecialKeys(int key, int x, int y)
 	case GLUT_KEY_LEFT:
 		if (upx > -1) {
 			upx -= 0.01;
-			cords.writeCords(eyex, eyey, eyez, centerx, centery, centerz);
 		}
 		break;
 
 	case GLUT_KEY_UP:
 		rotatex -= 1;
-		cords.writeCords(eyex, eyey, eyez, centerx, centery, centerz);
 		break;
 
 	case GLUT_KEY_RIGHT:
 		if (upx < 1) {
 			upx += 0.01;
-			cords.writeCords(eyex, eyey, eyez, centerx, centery, centerz);
 		}
 		break;
 
 	case GLUT_KEY_DOWN:
 		rotatex += 1;
-		cords.writeCords(eyex, eyey, eyez, centerx, centery, centerz);
 		break;
 	}
 

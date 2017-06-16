@@ -6,7 +6,7 @@ public:
 	Logs();
 	~Logs();
 
-	void writeCords(double eyex, double eyey, double eyez, double centerx, double centery, double centerz);
+	void writeCords(double &eyex, double &eyey, double &eyez);
 	void initClasses(char* name);
 };
 
